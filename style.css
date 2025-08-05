@@ -1,0 +1,219 @@
+/* You can easily change the main colors of the site here */
+:root {
+    --primary-color: #e91e63; /* A vibrant, romantic pink */
+    --secondary-color: #fff0f5; /* Lavender Blush - for highlights */
+    --text-color: #333;
+    --header-font: 'Pacifico', cursive;
+    --body-font: 'Montserrat', sans-serif;
+}
+
+/* Define the scrolling animation for the background */
+@keyframes scrollBackground {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 100%;
+    }
+}
+
+/* Basic Reset & Body Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+    color: var(--text-color);
+    line-height: 1.6;
+    text-align: center;
+    
+    /* --- FINAL CORRECTION: Matching your exact file path and name --- */
+    background-image: url('img/doodle-background.png');
+    background-repeat: repeat; /* The image will tile */
+    background-size: auto; /* Use the image's natural size */
+    animation: scrollBackground 60s linear infinite; /* Apply the animation */
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+header h1 {
+    font-family: var(--header-font);
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    padding: 2rem 0;
+    text-shadow: 2px 2px 6px rgba(255, 255, 255, 0.7);
+}
+
+section {
+    padding: 3rem 1rem;
+    /* --- NEW: Semi-transparent background for readability --- */
+    background-color: rgba(255, 255, 255, 0.9);
+    margin: 1.5rem auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    max-width: 95%;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-family: var(--header-font);
+}
+
+/* Hero Section */
+.main-photo {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    border: 5px solid white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    margin-top: 1.5rem;
+}
+
+/* Countdown Section */
+#timer {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+#timer div {
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    min-width: 100px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+#timer div:hover {
+    transform: translateY(-5px);
+}
+
+#timer span {
+    display: block;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+/* Gallery Section */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+/* Reasons Section */
+#reasons ul {
+    list-style: none;
+    display: inline-block;
+    text-align: left;
+    padding-left: 0; /* Remove default padding */
+}
+
+#reasons li {
+    background: var(--secondary-color);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-radius: 5px;
+    border-left: 5px solid var(--primary-color);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#reasons li:hover {
+    background-color: #f8bbd0;
+    transform: translateX(5px);
+}
+
+/* Message Section */
+#reveal-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-family: var(--body-font);
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+#reveal-button:hover {
+    background-color: #c2185b; /* Darker pink */
+    transform: translateY(-3px);
+}
+
+#letter {
+    background: #fffde7; /* A soft cream like paper */
+    padding: 2rem;
+    border-radius: .5px;
+    text-align: left;
+    max-width: 600px;
+    margin: auto;
+    border: 1px solid #fbc02d;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Class to hide the letter initially and for transition */
+.hidden {
+    opacity: 0;
+    transform: scale(0.9);
+    height: 0;
+    padding: 0;
+    border: none;
+    overflow: hidden;
+}
+
+
+footer {
+    padding: 2rem;
+    font-style: italic;
+    color: #333;
+    text-shadow: 1px 1px 3px white;
+    font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    #timer span {
+        font-size: 2rem;
+    }
+    section {
+        padding: 2rem 1rem;
+    }
+}
