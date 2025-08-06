@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- COUNT-UP TIMER ---
-    const startDate = new Date("January 30, 2024 00:00:00").getTime();
+    const startDate = new Date("January 30, 2023 00:00:00").getTime();
     const countUpFunction = setInterval(() => {
         const now = new Date().getTime();
         const distance = now - startDate;
@@ -45,3 +45,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
