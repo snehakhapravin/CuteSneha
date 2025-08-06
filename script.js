@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const audio = document.getElementById('background-song');
     if (audio) {
         // Set volume to 50% (0.5 is half of the max 1.0)
-        audio.volume = 0.5;
+        audio.volume = 0.1;
     }
 
     // --- COUNT-UP TIMER ---
@@ -45,4 +45,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
 
